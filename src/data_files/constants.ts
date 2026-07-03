@@ -7,7 +7,7 @@ export const SITE = {
     'Demain Informática ofrece servicio técnico, mantenimiento informático y asesoramiento tecnológico para particulares, comercios y pymes en Donostia.',
   description_short:
     'Servicio técnico, mantenimiento informático y asesoramiento tecnológico en Donostia.',
-  url: 'https://www.demaininformatica.com',
+  url: 'https://demainweb.dnsalias.com',
   author: 'Demain Informática',
 };
 

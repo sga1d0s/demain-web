@@ -1,10 +1,9 @@
 services:
-  web:
+  astro:
     build:
       context: .
+      dockerfile: Dockerfile
+      network: host
     ports:
-      - "4321:4321"
-    volumes:
-      - .:/app
-      - /app/node_modules
-    command: pnpm dev -- --host 0.0.0.0
+      - "8084:8084"
+    restart: unless-stopped
