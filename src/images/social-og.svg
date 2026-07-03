@@ -6,15 +6,16 @@
   <text x="174" y="194" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="700" fill="#FFFFFF">D</text>
   <text x="248" y="170" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="700" fill="#1F2937">Demain</text>
   <text x="250" y="218" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="600" fill="#6B7280">Informática</text>
-  <text x="128" y="324" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="700" fill="#111827">Servicio técnico y mantenimiento informático</text>
-  <text x="128" y="384" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="400" fill="#4B5563">Asistencia, reparación y asesoramiento tecnológico</text>
-  <text x="128" y="424" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="400" fill="#4B5563">para particulares, comercios y pymes en Donostia.</text>
+  <text x="128" y="316" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="700" fill="#111827">Servicio técnico y mantenimiento</text>
+  <text x="128" y="366" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="700" fill="#111827">informático en Donostia</text>
+  <text x="128" y="426" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="400" fill="#4B5563">Asistencia, reparación y asesoramiento tecnológico</text>
+  <text x="128" y="464" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="400" fill="#4B5563">para particulares, comercios y pymes.</text>
   <rect x="128" y="466" width="180" height="44" rx="22" fill="#FFF3E8"/>
   <text x="218" y="496" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#C2410C">943 320 705</text>
   <text x="332" y="496" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="600" fill="#374151">demaininformatica.com</text>
-  <path d="M916 158h104c28.719 0 52 23.281 52 52v104c0 28.719-23.281 52-52 52H916c-28.719 0-52-23.281-52-52V210c0-28.719 23.281-52 52-52Z" fill="#111827"/>
-  <path d="M928 218h82c17.673 0 32 14.327 32 32v40c0 17.673-14.327 32-32 32h-82c-17.673 0-32-14.327-32-32v-40c0-17.673 14.327-32 32-32Z" fill="#F97316"/>
-  <rect x="914" y="242" width="110" height="18" rx="9" fill="#FFFFFF"/>
-  <rect x="914" y="282" width="76" height="18" rx="9" fill="#FFFFFF"/>
-  <circle cx="1024" cy="291" r="10" fill="#FFFFFF"/>
+  <path d="M934 150h92c25.405 0 46 20.595 46 46v92c0 25.405-20.595 46-46 46h-92c-25.405 0-46-20.595-46-46v-92c0-25.405 20.595-46 46-46Z" fill="#111827"/>
+  <path d="M944 204h72c15.464 0 28 12.536 28 28v36c0 15.464-12.536 28-28 28h-72c-15.464 0-28-12.536-28-28v-36c0-15.464 12.536-28 28-28Z" fill="#F97316"/>
+  <rect x="932" y="228" width="96" height="16" rx="8" fill="#FFFFFF"/>
+  <rect x="932" y="264" width="66" height="16" rx="8" fill="#FFFFFF"/>
+  <circle cx="1028" cy="272" r="9" fill="#FFFFFF"/>
 </svg>
