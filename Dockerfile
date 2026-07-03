@@ -1,10 +1,16 @@
 # --- Build (Astro) ---
 FROM node:22-alpine AS build
 WORKDIR /app
-COPY package*.json ./
-RUN npm ci || npm install
+
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+
+RUN corepack enable
+
+COPY package.json pnpm-lock.yaml ./
+RUN pnpm install --frozen-lockfile
 COPY . .
-RUN npm run build
+RUN pnpm build
 
 # --- Runtime (Nginx) ---
 FROM nginx:1.27-alpine
