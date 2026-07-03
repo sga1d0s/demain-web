@@ -1,147 +1,130 @@
 ---
-// Import the necessary components
+import { Image } from 'astro:assets';
 import MainLayout from '@/layouts/MainLayout.astro';
-import HeroSection from '@components/sections/landing/HeroSection.astro';
-import HeroSectionAlt from '@components/sections/landing/HeroSectionAlt.astro';
-import ClientsSection from '@components/sections/landing/ClientsSection.astro';
-import FeaturesGeneral from '@components/sections/features/FeaturesGeneral.astro';
-import FeaturesNavs from '@components/sections/features/FeaturesNavs.astro';
-import TestimonialsSection from '@components/sections/testimonials/TestimonialsSection.astro';
-import PricingSection from '@components/sections/pricing/PricingSection.astro';
-import FAQ from '@components/sections/misc/FAQ.astro';
-import AnnouncementBanner from '@components/ui/banners/AnnouncementBanner.astro';
-import heroImage from '@images/hero-image.avif';
-import faqs from '@data/faqs.json';
-import features from '@data/features.json';
-import pricing from '@data/pricing.json';
-import featureImage from '@images/features-image.avif';
-import construction from '@images/construction-image.avif';
-import tools from '@images/automated-tools.avif';
-import dashboard from '@images/dashboard-image.avif';
-import { partnersData } from '@/data_files/constants';
+import PrimaryCTA from '@components/ui/buttons/PrimaryCTA.astro';
+import SecondaryCTA from '@components/ui/buttons/SecondaryCTA.astro';
+import heroImage from '@images/person-working.avif';
+import dashboardImage from '@images/dashboard-image.avif';
 
-const avatarSrcs: Array<string> = [
-  'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80',
-  'https://images.unsplash.com/photo-1531927557220-a9e23c1e4794?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80',
-  'https://images.unsplash.com/photo-1541101767792-f9b2b1c4f127?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&&auto=format&fit=facearea&facepad=3&w=300&h=300&q=80',
-  'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80',
+const services = [
+  {
+    title: 'Servicio técnico',
+    text: 'Revisión, diagnóstico y reparación de equipos en domicilio, taller o remoto.',
+    href: '/servicios',
+  },
+  {
+    title: 'Mantenimiento informático',
+    text: 'Planes adaptados para pequeños comercios, pymes y clientes con mayor volumen de equipos.',
+    href: '/mantenimiento',
+  },
+  {
+    title: 'Asistencia remota',
+    text: 'Resolución ágil de incidencias conectándonos de forma segura al equipo del cliente.',
+    href: '/asistencia-tecnica',
+  },
 ];
 ---
 
-<MainLayout>
-  <AnnouncementBanner
-    btnId="dismiss-button"
-    btnTitle="Explore ScrewFast on GitHub"
-    url="https://github.com/mearashadowfax/ScrewFast"
-  />
+<MainLayout
+  title="Demain Informática | Servicio técnico y mantenimiento informático en Donostia"
+  lang="es"
+  customDescription="Servicio técnico, mantenimiento informático, asistencia remota y asesoramiento tecnológico para particulares, comercios y pymes en Donostia."
+>
+  <section class="grid gap-10 py-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-20">
+    <div>
+      <p class="text-sm font-bold uppercase tracking-wide text-orange-600">
+        Servicio informático en Donostia desde 2003
+      </p>
+      <h1
+        class="mt-4 max-w-4xl text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl lg:text-6xl dark:text-neutral-100"
+      >
+        Soporte técnico y mantenimiento informático para tu día a día.
+      </h1>
+      <p class="mt-6 max-w-2xl text-lg leading-8 text-neutral-700 dark:text-neutral-300">
+        Ayudamos a particulares, comercios y pymes con reparación de equipos,
+        asistencia remota, mantenimiento, asesoramiento y soluciones adaptadas a
+        cada necesidad.
+      </p>
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+        <PrimaryCTA title="Llamar ahora" url="tel:+34943320705" noArrow />
+        <SecondaryCTA title="Ver servicios" url="/servicios" />
+      </div>
+      <div class="mt-8 grid gap-4 text-sm text-neutral-700 sm:grid-cols-3 dark:text-neutral-300">
+        <div>
+          <strong class="block text-2xl text-neutral-900 dark:text-neutral-100">2003</strong>
+          Servicio cercano y estable
+        </div>
+        <div>
+          <strong class="block text-2xl text-neutral-900 dark:text-neutral-100">943 320 705</strong>
+          Atención telefónica
+        </div>
+        <div>
+          <strong class="block text-2xl text-neutral-900 dark:text-neutral-100">Online</strong>
+          Soporte remoto
+        </div>
+      </div>
+    </div>
+    <div class="overflow-hidden rounded-lg">
+      <Image
+        src={heroImage}
+        alt="Persona trabajando con un ordenador"
+        class="h-full min-h-[360px] w-full object-cover"
+        loading="eager"
+      />
+    </div>
+  </section>
 
-  <HeroSection
-    title=`Equip Your Projects with <span
-        class="text-yellow-500 dark:text-yellow-400">ScrewFast</span>`
-    subTitle="Top-quality hardware tools and expert construction services for every project need."
-    primaryBtn="Start Exploring"
-    primaryBtnURL="/products"
-    secondaryBtn="Contact Sales Team"
-    secondaryBtnURL="/contact"
-    withReview={true}
-    avatars={avatarSrcs}
-    rating=`<span class="font-bold">4.8</span> / 5`
-    starCount={4}
-    reviews=`From Over <span class="font-bold">12.8k</span> Reviews`
-    src={heroImage}
-    alt="Stack of ScrewFast product boxes containing assorted hardware tools"
-  />
+  <section class="py-10 lg:py-16">
+    <div class="mb-8 max-w-3xl">
+      <p class="text-sm font-bold uppercase tracking-wide text-orange-600">
+        Qué hacemos
+      </p>
+      <h2 class="mt-3 text-3xl font-bold text-neutral-900 dark:text-neutral-100">
+        Servicios informáticos para resolver, prevenir y mejorar.
+      </h2>
+    </div>
+    <div class="grid gap-4 md:grid-cols-3">
+      {
+        services.map(service => (
+          <a
+            href={service.href}
+            class="rounded-lg border border-neutral-300 bg-neutral-100 p-6 transition hover:border-orange-400 hover:bg-white dark:border-neutral-700 dark:bg-neutral-800 dark:hover:border-orange-500"
+          >
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">
+              {service.title}
+            </h3>
+            <p class="mt-3 leading-7 text-neutral-700 dark:text-neutral-300">
+              {service.text}
+            </p>
+          </a>
+        ))
+      }
+    </div>
+  </section>
 
-  <ClientsSection
-    title="Trusted by Industry Leaders"
-    subTitle="Experience the reliability chosen by industry giants."
-    partners={partnersData}
-  />
-
-  <FeaturesGeneral
-    title="Meeting Industry Demands"
-    subTitle="At ScrewFast, we tackle the unique challenges encountered in the hardware and construction sectors. From cutting-edge tools to expert services, we're dedicated to helping you overcome obstacles and achieve your goals."
-    src={featureImage}
-    alt="ScrewFast products in floating boxes"
-    features={features}
-  />
-
-  <FeaturesNavs
-    title=`Customize <span class="text-yellow-500 dark:text-yellow-400">ScrewFast</span>'s offerings to perfectly suit your hardware and construction needs.`
-    tabs={[
-      {
-        heading: 'Cutting-Edge Tools',
-        content:
-          "Empower your projects with ScrewFast's cutting-edge tools. Experience enhanced efficiency in construction management with our sophisticated automated solutions.",
-        svg: 'tools',
-        src: tools,
-        alt: 'Yellow and black heavy equipment on brown grass field',
-        first: true,
-      },
-      {
-        heading: 'Intuitive Dashboards',
-        content:
-          "Navigate with ease using ScrewFast's intuitive dashboards. Set up and oversee your projects seamlessly, with user-friendly interfaces designed for quick and effective workflow management.",
-        svg: 'dashboard',
-        src: dashboard,
-        alt: 'A screenshot or graphic representation of the intuitive dashboard',
-        second: true,
-      },
-      {
-        heading: 'Robust Features',
-        content:
-          "Minimize complexity, maximize productivity. ScrewFast's robust features are engineered to streamline your construction process, delivering results that stand out for their excellence.",
-        svg: 'house',
-        src: construction,
-        alt: 'Gray metal building frame near tower crane during daytime',
-      },
-    ]}
-  />
-
-  <TestimonialsSection
-    title="Fast-Track Your Projects"
-    subTitle="At ScrewFast, we ensure a swift start with instant account setup. Experience the speed of construction redefined."
-    ;
-    testimonials={[
-      {
-        content:
-          'ScrewFast dramatically boosted our project efficiency. Setup was instant, and their rapid response times are phenomenal. Truly a game-changer in hardware and construction support!',
-        author: 'Samantha Ruiz',
-        role: 'Chief Operating Officer | ConstructIt Inc.',
-        avatarSrc:
-          'https://images.unsplash.com/photo-1593104547489-5cfb3839a3b5?q=80&w=1453&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80',
-      },
-    ]}
-    statistics={[
-      {
-        count: '70k+',
-        description:
-          'customers equipped — from DIY to major construction firms',
-      },
-      {
-        count: '35%',
-        description:
-          'uptick in project efficiency with ScrewFast tools and services',
-      },
-      {
-        count: '15.3%',
-        description:
-          'reduction in maintenance costs reported by long-term clients',
-      },
-      {
-        count: '2x',
-        description: 'quicker assembly using innovative fastening solutions',
-      },
-    ]}
-  />
-
-  <PricingSection pricing={pricing} />
-
-  <FAQ title="Frequently<br />asked questions" faqs={faqs} />
-
-  <HeroSectionAlt
-    title="Let's Build Together"
-    subTitle="ScrewFast is an open-source template, meticulously crafted with Astro, Tailwind CSS, and Preline UI frameworks."
-    url="https://github.com/mearashadowfax/ScrewFast"
-  />
+  <section class="grid gap-8 py-10 lg:grid-cols-2 lg:items-center lg:py-16">
+    <div class="overflow-hidden rounded-lg">
+      <Image
+        src={dashboardImage}
+        alt="Panel de control y herramientas digitales"
+        class="h-full min-h-[320px] w-full object-cover"
+      />
+    </div>
+    <div>
+      <p class="text-sm font-bold uppercase tracking-wide text-orange-600">
+        Para empresas y comercios
+      </p>
+      <h2 class="mt-3 text-3xl font-bold text-neutral-900 dark:text-neutral-100">
+        Mantenimiento a medida, sin complicar el soporte diario.
+      </h2>
+      <p class="mt-4 leading-8 text-neutral-700 dark:text-neutral-300">
+        Trabajamos con mantenimientos básicos para pequeños comercios y pymes,
+        y con planes más completos para clientes que necesitan supervisión,
+        copias de seguridad, seguridad y atención continuada.
+      </p>
+      <div class="mt-6">
+        <PrimaryCTA title="Consultar mantenimiento" url="/mantenimiento" />
+      </div>
+    </div>
+  </section>
 </MainLayout>

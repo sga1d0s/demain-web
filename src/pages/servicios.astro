@@ -1,0 +1,66 @@
+---
+import MainLayout from '@/layouts/MainLayout.astro';
+
+const services = [
+  {
+    title: 'Servicio a domicilio',
+    text: 'Reparación de equipos en domicilio, solución in situ o retirada y devolución del equipo una vez reparado.',
+  },
+  {
+    title: 'Servicio a empresas',
+    text: 'Mantenimiento integral a empresas: equipos, redes, servidores, impresoras y soporte adaptado al volumen de trabajo.',
+  },
+  {
+    title: 'Asistencia remota',
+    text: 'Soporte no presencial para problemas que se pueden resolver conectándonos al equipo del cliente.',
+  },
+  {
+    title: 'Servicio electrónico',
+    text: 'Revisión de componentes y equipos con problemas electrónicos, análisis y presupuesto previo a la reparación.',
+  },
+  {
+    title: 'Mantenimiento cloud',
+    text: 'Supervisión, copias de seguridad, actualizaciones y prevención frente a malware o ransomware.',
+  },
+  {
+    title: 'Asesoramiento',
+    text: 'Ayuda para elegir equipo nuevo, actualizar hardware o implantar software, seguridad, ofimática o gestión.',
+  },
+];
+---
+
+<MainLayout
+  title="Servicios | Demain Informática"
+  lang="es"
+  customDescription="Servicios informáticos en Donostia: reparación a domicilio, asistencia remota, mantenimiento a empresas, electrónica, cloud y asesoramiento."
+>
+  <section class="py-14 lg:py-24">
+    <div class="max-w-3xl">
+      <p class="text-sm font-bold uppercase tracking-wide text-orange-600">
+        Servicios
+      </p>
+      <h1 class="mt-4 text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100">
+        Soluciones informáticas para resolver incidencias y mantener tus equipos funcionando.
+      </h1>
+      <p class="mt-6 text-lg leading-8 text-neutral-700 dark:text-neutral-300">
+        Somos especialistas en equipos Windows, y también trabajamos con Mac,
+        Linux, periféricos, móviles, tablets, monitores y software de uso diario.
+      </p>
+    </div>
+
+    <div class="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {
+        services.map(service => (
+          <article class="rounded-lg border border-neutral-300 bg-neutral-100 p-6 dark:border-neutral-700 dark:bg-neutral-800">
+            <h2 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">
+              {service.title}
+            </h2>
+            <p class="mt-3 leading-7 text-neutral-700 dark:text-neutral-300">
+              {service.text}
+            </p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+</MainLayout>
