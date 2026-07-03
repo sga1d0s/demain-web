@@ -5,6 +5,7 @@ const navBarLinks = [
   { name: 'Servicios', url: '/servicios' },
   { name: 'Mantenimiento', url: '/mantenimiento' },
   { name: 'Asistencia Técnica', url: '/asistencia-tecnica' },
+  { name: 'Desarrollo de Software', url: '/desarrollo-software' },
   { name: 'Contacto', url: '/contacto' },
 ];
 // An array of links for footer
