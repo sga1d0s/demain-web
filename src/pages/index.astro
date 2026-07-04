@@ -3,7 +3,7 @@ import { Image } from 'astro:assets';
 import MainLayout from '@/layouts/MainLayout.astro';
 import PrimaryCTA from '@components/ui/buttons/PrimaryCTA.astro';
 import SecondaryCTA from '@components/ui/buttons/SecondaryCTA.astro';
-import heroImage from '@images/person-working.avif';
+import heroImage from '@images/hero-it-support.jpg';
 import dashboardImage from '@images/dashboard-image.avif';
 
 const services = [
@@ -72,8 +72,8 @@ const services = [
     <div class="overflow-hidden rounded-lg">
       <Image
         src={heroImage}
-        alt="Persona trabajando con un ordenador"
-        class="h-full min-h-[360px] w-full object-cover"
+        alt="Técnico configurando cableado de red en un rack informático"
+        class="h-full min-h-[360px] lg:min-h-[510px] w-full object-cover"
         loading="eager"
       />
     </div>
