@@ -1,7 +1,7 @@
 // An array of links for navigation bar
 const navBarLinks = [
   { name: 'Inicio', url: '/' },
-  { name: 'Empresa', url: '/empresa' },
+  { name: 'La Empresa', url: '/empresa' },
   { name: 'Servicios', url: '/servicios' },
   { name: 'Mantenimiento', url: '/mantenimiento' },
   { name: 'Desarrollo de Software', url: '/desarrollo-software' },

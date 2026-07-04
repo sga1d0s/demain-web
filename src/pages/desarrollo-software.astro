@@ -1,12 +1,42 @@
 ---
 import MainLayout from '@/layouts/MainLayout.astro';
 import PrimaryCTA from '@components/ui/buttons/PrimaryCTA.astro';
+
+const softwareServices = [
+  {
+    title: 'Software web',
+    text: 'Diseñamos y desarrollamos aplicaciones web, paneles de gestión, portales corporativos y herramientas online accesibles desde cualquier navegador.',
+  },
+  {
+    title: 'Software de escritorio',
+    text: 'Creamos aplicaciones de escritorio para Windows y MacOS, herramientas internas y soluciones adaptadas al trabajo diario de cada empresa.',
+  },
+  {
+    title: 'Aplicaciones móviles',
+    text: 'Desarrollamos aplicaciones móviles para Android e iOS, pensadas para clientes, equipos comerciales, técnicos o procesos internos.',
+  },
+];
+
+const processSteps = [
+  {
+    title: 'Análisis y alcance',
+    text: 'Definimos qué necesita el cliente, qué problema debe resolver el software y qué funcionalidades son prioritarias.',
+  },
+  {
+    title: 'Desarrollo por fases',
+    text: 'Dividimos el proyecto en entregas pequeñas para avanzar de forma ordenada y validar cada parte antes de continuar.',
+  },
+  {
+    title: 'CI/CD y despliegues continuos',
+    text: 'Preparamos un flujo de integración y despliegue para que el cliente pueda ver la evolución del proyecto tras cada nueva función implementada.',
+  },
+];
 ---
 
 <MainLayout
   title="Desarrollo de Software | Demain Informática"
   lang="es"
-  customDescription="Desarrollo de software a medida, automatización y soluciones digitales para empresas y comercios."
+  customDescription="Desarrollo de software web, aplicaciones de escritorio y aplicaciones móviles a medida para empresas y comercios."
 >
   <section class="py-14 lg:py-24">
     <div class="max-w-3xl">
@@ -16,36 +46,65 @@ import PrimaryCTA from '@components/ui/buttons/PrimaryCTA.astro';
       <h1
         class="mt-4 text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100"
       >
-        Soluciones digitales a medida para mejorar procesos y ahorrar tiempo.
+        Software a medida para web, escritorio y aplicaciones móviles.
       </h1>
       <p class="mt-6 text-lg leading-8 text-neutral-700 dark:text-neutral-300">
-        Desarrollamos todo tipo de aplicaciones, automatizaciones e integraciones adaptadas a
-        las necesidades reales de cada negocio.
+        Diseñamos y desarrollamos software web, aplicaciones de escritorio y
+        aplicaciones móviles adaptadas a las necesidades reales de cada cliente.
       </p>
     </div>
 
-    <div class="mt-10 grid gap-4 md:grid-cols-2">
-      <article
-        class="rounded-lg border border-neutral-300 bg-neutral-100 p-6 dark:border-neutral-700 dark:bg-neutral-800"
-      >
-        <h2 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">
-          Teléfono
-        </h2>
-        <p class="mt-3 text-2xl font-bold text-orange-600">943 320 705</p>
-      </article>
-      <article
-        class="rounded-lg border border-neutral-300 bg-neutral-100 p-6 dark:border-neutral-700 dark:bg-neutral-800"
-      >
-        <h2 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">
-          Email
-        </h2>
-        <p class="mt-3 text-lg font-bold break-words text-orange-600">
-          demain@demaininformatica.com
-        </p>
-      </article>
+    <div class="mt-10 grid gap-4 md:grid-cols-3">
+      {
+        softwareServices.map(service => (
+          <article class="rounded-lg border border-neutral-300 bg-neutral-100 p-6 dark:border-neutral-700 dark:bg-neutral-800">
+            <h2 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">
+              {service.title}
+            </h2>
+            <p class="mt-3 leading-7 text-neutral-700 dark:text-neutral-300">
+              {service.text}
+            </p>
+          </article>
+        ))
+      }
     </div>
 
-    <div class="mt-10">
+    <div class="mt-16">
+      <div class="max-w-3xl">
+        <p class="text-sm font-bold tracking-wide text-orange-600 uppercase">
+          Forma de trabajo
+        </p>
+        <h2
+          class="mt-3 text-3xl font-bold text-neutral-900 dark:text-neutral-100"
+        >
+          Desarrollo por fases, con avances visibles desde el principio.
+        </h2>
+      </div>
+
+      <div class="mt-8 grid gap-4 md:grid-cols-3">
+        {
+          processSteps.map(step => (
+            <article class="rounded-lg border border-neutral-300 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-900">
+              <h3 class="text-lg font-bold text-neutral-900 dark:text-neutral-100">
+                {step.title}
+              </h3>
+              <p class="mt-3 leading-7 text-neutral-700 dark:text-neutral-300">
+                {step.text}
+              </p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="max-w-3xl">
+      <p class="mt-6 text-lg leading-8 text-neutral-700 dark:text-neutral-300">
+        Cuéntanos qué software necesitas desarrollar y te ayudaremos a definir
+        una primera versión clara, útil y viable.
+      </p>
+    </div>
+
+    <div class="mt-10 flex flex-col gap-3 sm:flex-row">
       <PrimaryCTA title="Contactar" url="/contacto" />
     </div>
   </section>
