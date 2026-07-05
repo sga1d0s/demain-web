@@ -1,7 +1,9 @@
 ---
+import { Image } from 'astro:assets';
 import enStrings from '@utils/navigation.ts';
 import BrandLogo from '@components/BrandLogo.astro';
 import { SITE } from '@data/constants';
+import transformacionDigitalLogo from '@images/transformacion-digital.png';
 
 const strings = enStrings;
 ---
@@ -42,7 +44,19 @@ const strings = enStrings;
     </div>
 
     <div
-      class="mt-9 grid gap-y-2 sm:mt-12 sm:flex sm:items-center sm:justify-between sm:gap-y-0"
+  class="mt-9 flex justify-center border-t border-neutral-400/40 pt-6 dark:border-neutral-700 sm:mt-12"
+    >
+      <Image
+        src={transformacionDigitalLogo}
+        alt="Financiado por la Unión Europea NextGenerationEU, Gobierno de España, red.es y Kit Digital"
+        class="h-auto w-full max-w-[60.25rem] dark:rounded-sm dark:bg-white"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+
+    <div
+      class="mt-6 grid gap-y-2 sm:flex sm:items-center sm:justify-between sm:gap-y-0"
     >
       <div class="flex items-center justify-between">
         <p class="text-sm text-neutral-600 dark:text-neutral-400">
