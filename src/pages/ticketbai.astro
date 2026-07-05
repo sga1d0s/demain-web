@@ -1,0 +1,237 @@
+---
+import { Image } from 'astro:assets';
+import MainLayout from '@/layouts/MainLayout.astro';
+import PrimaryCTA from '@components/ui/buttons/PrimaryCTA.astro';
+import SecondaryCTA from '@components/ui/buttons/SecondaryCTA.astro';
+import heroImage from '@images/hero-it-support.jpg';
+import ticketbaiImage from '@images/ticketbai.png';
+
+const equipment = [
+  {
+    item: 'TPV 15,6" capacitivo Quadcore J4125, 4GB, 128GB, Win10 IoT',
+    price: '649 EUR',
+  },
+  {
+    item: 'TPV 15,6" capacitivo i5-5300T, 8GB, 256GB, Win10 IoT',
+    price: '949 EUR',
+  },
+  {
+    item: 'Impresora de tickets termica con corte 80 mm USB',
+    price: '109 EUR',
+  },
+  { item: 'Cajon portamonedas negro RJ11', price: '49 EUR' },
+  { item: 'Lector codigo de barras wireless', price: '119 EUR' },
+];
+
+const software = [
+  {
+    item: 'Instalacion software Facturacion TicketBAI, certificado digital, formacion inicial, registro y diseno de ticket o factura',
+    price: '280 EUR',
+  },
+  { item: 'Licencia software Facturacion/TPV anual', price: '389 EUR' },
+  { item: 'Licencia software Facturacion/TPV anual nube', price: '729 EUR' },
+  { item: 'Instalacion para autonomos y pequenas empresas', price: '120 EUR' },
+  { item: 'Licencia software Facturacion anual', price: '290 EUR' },
+  { item: 'Licencia software Facturacion anual nube', price: '605 EUR' },
+  {
+    item: 'Equipamiento a medida para autonomos y pequenas empresas',
+    price: 'A medida',
+  },
+];
+
+const notes = [
+  'La licencia anual incluye mantenimiento de la aplicacion por email y todas las actualizaciones.',
+  'Para implantar TicketBAI es necesario solicitar el certificado digital e instalarlo en el equipo.',
+  'Trabajamos con empresas de software registradas en la plataforma TicketBAI.',
+  'Realizamos presupuestos a medida segun equipo, modalidad de servicio y necesidades del cliente.',
+  'Los precios incluyen IVA.',
+];
+---
+
+<MainLayout
+  title="TicketBAI | Implantacion y soporte en Demain Informática"
+  lang="es"
+  customDescription="Implantacion de TicketBAI, TPV, software de facturacion, certificado digital, licencias y mantenimiento para autonomos, comercios y pequenas empresas."
+>
+  <section
+    class="grid gap-10 py-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-20"
+  >
+    <div>
+      <p class="text-sm font-bold tracking-wide text-orange-600 uppercase">
+        TicketBAI
+      </p>
+      <h1
+        class="mt-4 max-w-4xl text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl dark:text-neutral-100"
+      >
+        Implantacion de TicketBAI para autonomos, comercios y pequenas empresas.
+      </h1>
+      <p
+        class="mt-6 max-w-2xl text-lg leading-8 text-neutral-700 dark:text-neutral-300"
+      >
+        TicketBAI exige utilizar un software de facturacion que genere y envie
+        la informacion tributaria requerida por Hacienda. En la factura aparece
+        un codigo especial y un QR para comprobar que ha sido emitida
+        correctamente.
+      </p>
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+        <PrimaryCTA title="Solicitar implantacion" url="/contacto" />
+        <SecondaryCTA title="Llamar al 943 320 705" url="tel:+34943320705" />
+      </div>
+    </div>
+    <div class="overflow-hidden rounded-lg border border-neutral-300 bg-neutral-100 dark:border-neutral-700 dark:bg-neutral-900">
+
+      <Image
+        src={ticketbaiImage}
+        alt="Código QR de TicketBai en Gipuzkoa"
+        class="block max-h-[360px] w-full object-contain p-6"
+        
+        loading="eager"
+      />
+    </div>
+  </section>
+
+  <section class="grid gap-5 py-10 md:grid-cols-3 lg:py-16">
+    <article
+      class="rounded-lg border border-neutral-300 bg-neutral-100 p-6 dark:border-neutral-700 dark:bg-neutral-900"
+    >
+      <p class="text-sm font-bold tracking-wide text-orange-600 uppercase">
+        Software
+      </p>
+      <h2
+        class="mt-3 text-2xl font-bold text-neutral-900 dark:text-neutral-100"
+      >
+        Programas registrados
+      </h2>
+      <p class="mt-4 leading-7 text-neutral-700 dark:text-neutral-300">
+        Implantamos aplicaciones de facturacion compatibles con TicketBAI y las
+        configuramos con certificado digital.
+      </p>
+    </article>
+    <article
+      class="rounded-lg border border-neutral-300 bg-neutral-100 p-6 dark:border-neutral-700 dark:bg-neutral-900"
+    >
+      <p class="text-sm font-bold tracking-wide text-orange-600 uppercase">
+        Equipamiento
+      </p>
+      <h2
+        class="mt-3 text-2xl font-bold text-neutral-900 dark:text-neutral-100"
+      >
+        TPV y accesorios
+      </h2>
+      <p class="mt-4 leading-7 text-neutral-700 dark:text-neutral-300">
+        Suministramos TPV, impresora de tickets, cajon portamonedas y lector de
+        codigos de barras.
+      </p>
+    </article>
+    <article
+      class="rounded-lg border border-neutral-300 bg-neutral-100 p-6 dark:border-neutral-700 dark:bg-neutral-900"
+    >
+      <p class="text-sm font-bold tracking-wide text-orange-600 uppercase">
+        Puesta en marcha
+      </p>
+      <h2
+        class="mt-3 text-2xl font-bold text-neutral-900 dark:text-neutral-100"
+      >
+        Instalacion y formacion
+      </h2>
+      <p class="mt-4 leading-7 text-neutral-700 dark:text-neutral-300">
+        Configuramos el sistema, registramos los datos necesarios y damos una
+        formacion inicial para trabajar con facturas y tickets.
+      </p>
+    </article>
+  </section>
+
+  <section class="py-10 lg:py-16">
+    <div class="mb-8 max-w-3xl">
+      <p class="text-sm font-bold tracking-wide text-orange-600 uppercase">
+        Presupuestos
+      </p>
+      <h2
+        class="mt-3 text-3xl font-bold text-neutral-900 dark:text-neutral-100"
+      >
+        Opciones principales de equipamiento y software.
+      </h2>
+    </div>
+
+    <div class="grid gap-6 lg:grid-cols-2">
+      <div
+        class="overflow-hidden rounded-lg border border-neutral-300 bg-neutral-100 dark:border-neutral-700 dark:bg-neutral-900"
+      >
+        <div class="border-b border-neutral-300 p-5 dark:border-neutral-700">
+          <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">
+            Punto de venta y accesorios
+          </h3>
+        </div>
+        <div class="divide-y divide-neutral-300 dark:divide-neutral-700">
+          {
+            equipment.map(row => (
+              <div class="grid gap-2 p-5 sm:grid-cols-[1fr_auto] sm:items-center">
+                <p class="leading-7 text-neutral-700 dark:text-neutral-300">
+                  {row.item}
+                </p>
+                <p class="font-bold text-neutral-900 dark:text-neutral-100">
+                  {row.price}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <div
+        class="overflow-hidden rounded-lg border border-neutral-300 bg-neutral-100 dark:border-neutral-700 dark:bg-neutral-900"
+      >
+        <div class="border-b border-neutral-300 p-5 dark:border-neutral-700">
+          <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">
+            Implantacion y licencias
+          </h3>
+        </div>
+        <div class="divide-y divide-neutral-300 dark:divide-neutral-700">
+          {
+            software.map(row => (
+              <div class="grid gap-2 p-5 sm:grid-cols-[1fr_auto] sm:items-center">
+                <p class="leading-7 text-neutral-700 dark:text-neutral-300">
+                  {row.item}
+                </p>
+                <p class="font-bold text-neutral-900 dark:text-neutral-100">
+                  {row.price}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-10 lg:py-16">
+    <div
+      class="grid gap-8 rounded-lg border border-neutral-300 bg-neutral-100 p-6 lg:grid-cols-[0.8fr_1.2fr] lg:p-8 dark:border-neutral-700 dark:bg-neutral-900"
+    >
+      <div>
+        <p class="text-sm font-bold tracking-wide text-orange-600 uppercase">
+          Mantenimiento
+        </p>
+        <h2
+          class="mt-3 text-3xl font-bold text-neutral-900 dark:text-neutral-100"
+        >
+          Soporte propio para TicketBAI y el resto de tu entorno.
+        </h2>
+        <p class="mt-4 leading-8 text-neutral-700 dark:text-neutral-300">
+          Si ademas del mantenimiento incluido por la aplicacion necesitas ayuda
+          de nuestros tecnicos, ofrecemos soporte para consultas, incidencias,
+          copias de seguridad, antivirus y supervision.
+        </p>
+      </div>
+      <ul class="grid gap-3 text-neutral-700 dark:text-neutral-300">
+        {
+          notes.map(note => (
+            <li class="rounded-lg bg-white p-4 leading-7 dark:bg-neutral-800">
+              {note}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+</MainLayout>
