@@ -1,6 +1,8 @@
 ---
 import MainLayout from '@/layouts/MainLayout.astro';
 import PrimaryCTA from '@components/ui/buttons/PrimaryCTA.astro';
+import { Image } from 'astro:assets';
+import codeImage from '@images/code-on-screen-stockcake.jpg';
 
 const softwareServices = [
   {
@@ -38,7 +40,9 @@ const processSteps = [
   lang="es"
   customDescription="Desarrollo de software web, aplicaciones de escritorio y aplicaciones móviles a medida para empresas y comercios."
 >
-  <section class="py-14 lg:py-24">
+  <section
+    class="grid gap-10 py-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-20"
+  >
     <div class="max-w-3xl">
       <p class="text-sm font-bold tracking-wide text-orange-600 uppercase">
         Desarrollo de Software
@@ -53,7 +57,18 @@ const processSteps = [
         aplicaciones móviles adaptadas a las necesidades reales de cada cliente.
       </p>
     </div>
-
+    <div
+      class="overflow-hidden rounded-lg border border-neutral-300 bg-neutral-100 dark:border-neutral-700 dark:bg-neutral-900"
+    >
+      <Image
+        src={codeImage}
+        alt="IDE con códiso en la pantalla de ordenador"
+        class="block max-h-[360px] w-full object-contain p-6"
+        loading="eager"
+      />
+    </div>
+  </section>
+  <section class="">
     <div class="mt-10 grid gap-4 md:grid-cols-3">
       {
         softwareServices.map(service => (
@@ -99,7 +114,8 @@ const processSteps = [
 
     <div class="max-w-3xl">
       <p class="mt-6 text-lg leading-8 text-neutral-700 dark:text-neutral-300">
-        Cuéntanos tu proyecto o necesidades. Te ayudaremos a definir y desarrollar la herramienta adecuada de forma clara, útil y viable.
+        Cuéntanos tu proyecto o necesidades. Te ayudaremos a definir y
+        desarrollar la herramienta adecuada de forma clara, útil y viable.
       </p>
     </div>
 
