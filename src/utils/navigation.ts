@@ -4,6 +4,7 @@ const navBarLinks = [
   { name: 'La Empresa', url: '/empresa' },
   { name: 'Servicios', url: '/servicios' },
   { name: 'Mantenimiento', url: '/mantenimiento' },
+  { name: 'TicketBai', url: '/ticketbai' },
   { name: 'Desarrollo de Software', url: '/desarrollo-software' },
   { name: 'Contacto', url: '/contacto' },
 ];
@@ -14,7 +15,9 @@ const footerLinks = [
     links: [
       { name: 'Servicio técnico', url: '/servicios' },
       { name: 'Mantenimiento informático', url: '/mantenimiento' },
-      { name: 'Asistencia remota', url: '/asistencia-tecnica' },
+      // { name: 'Asistencia remota', url: '/asistencia-tecnica' },
+      { name: 'TicketBAI', url: '/ticketbai' },
+      { name: 'Desarrollo de Software', url: '/desarrollo-software' },
     ],
   },
   {
@@ -23,7 +26,10 @@ const footerLinks = [
       { name: 'Empresa', url: '/empresa' },
       { name: 'Contacto', url: '/contacto' },
       { name: '943 320 705', url: 'tel:+34943320705' },
-      { name: 'demain@demaininformatica.com', url: 'mailto:demain@demaininformatica.com' },
+      {
+        name: 'demain@demaininformatica.com',
+        url: 'mailto:demain@demaininformatica.com',
+      },
     ],
   },
 ];

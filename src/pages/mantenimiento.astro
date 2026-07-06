@@ -1,60 +1,131 @@
 ---
+import { Image } from 'astro:assets';
 import MainLayout from '@/layouts/MainLayout.astro';
 import PrimaryCTA from '@components/ui/buttons/PrimaryCTA.astro';
+import SecondaryCTA from '@components/ui/buttons/SecondaryCTA.astro';
+import dashboardImage from '@images/dashboard-image.avif';
+
+const hourlyPacks = [
+  { hours: '20 horas', price: '40 EUR/h' },
+  { hours: '30 horas', price: '38 EUR/h' },
+  { hours: '40 horas', price: '36 EUR/h' },
+  { hours: '50 horas', price: '33 EUR/h' },
+];
+
+const conditions = [
+  'Servicio presencial y remoto con cargo al tiempo realmente utilizado.',
+  'En asistencia presencial, la primera hora se cobra completa y despues en tramos de 30 minutos.',
+  'En asistencia remota se tarifica en fracciones de media hora desde la primera hora.',
+  'Los desplazamientos no se cobran aparte; se contabiliza el tiempo total empleado.',
+  'Las bolsas de horas no caducan.',
+  'Los precios incluyen IVA.',
+];
 ---
 
 <MainLayout
-  title="Mantenimiento informático | Demain Informática"
+  title="Mantenimiento informático y bolsa de horas | Demain Informática"
   lang="es"
-  customDescription="Planes de mantenimiento informático para pequeños comercios, pymes y clientes con necesidades avanzadas en Donostia."
+  customDescription="Bolsa de horas y mantenimiento informático para comercios, pymes y clientes con necesidades puntuales o recurrentes en Donostia."
 >
-  <section class="py-14 lg:py-24">
-    <div class="max-w-3xl">
-      <p class="text-sm font-bold uppercase tracking-wide text-orange-600">
-        Mantenimiento
+  <section
+    class="grid gap-10 py-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-20"
+  >
+    <div>
+      <p class="text-sm font-bold tracking-wide text-orange-600 uppercase">
+        Mantenimiento informático
       </p>
-      <h1 class="mt-4 text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100">
-        Mantenimiento informático adaptado a cada cliente.
+      <h1
+        class="mt-4 max-w-4xl text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl dark:text-neutral-100"
+      >
+        Soporte flexible con bolsa de horas para empresas y comercios.
       </h1>
-      <p class="mt-6 text-lg leading-8 text-neutral-700 dark:text-neutral-300">
-        Disponemos de servicios de mantenimiento para pequeños comercios, pymes
-        y clientes con necesidades mayores. Estudiamos el entorno, el volumen de
-        equipos y la criticidad del trabajo para proponer un plan adecuado.
+      <p
+        class="mt-6 max-w-2xl text-lg leading-8 text-neutral-700 dark:text-neutral-300"
+      >
+        Una bolsa de horas permite comprar soporte técnico por adelantado y
+        utilizarlo cuando lo necesites, sin asumir un mantenimiento permanente.
+        Es una modalidad adecuada para empresas con baja dependencia IT,
+        intervenciones puntuales o necesidades especializadas en sistemas,
+        redes, seguridad o infraestructura.
       </p>
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+        <PrimaryCTA title="Solicitar mantenimiento" url="/contacto" />
+        <SecondaryCTA title="Llamar al 943 320 705" url="tel:+34943320705" />
+      </div>
     </div>
-
-    <div class="mt-10 grid gap-4 md:grid-cols-3">
-      <article class="rounded-lg border border-neutral-300 bg-neutral-100 p-6 dark:border-neutral-700 dark:bg-neutral-900">
-        <h2 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">
-          Básico
-        </h2>
-        <p class="mt-3 leading-7 text-neutral-700 dark:text-neutral-300">
-          Soporte y revisiones para comercios o pequeñas oficinas que necesitan
-          ayuda puntual y continuidad.
-        </p>
-      </article>
-      <article class="rounded-lg border border-neutral-300 bg-neutral-100 p-6 dark:border-neutral-700 dark:bg-neutral-900">
-        <h2 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">
-          Empresa
-        </h2>
-        <p class="mt-3 leading-7 text-neutral-700 dark:text-neutral-300">
-          Mantenimiento de equipos, redes, servidores, periféricos y soporte a
-          usuarios con o sin contrato.
-        </p>
-      </article>
-      <article class="rounded-lg border border-neutral-300 bg-neutral-100 p-6 dark:border-neutral-700 dark:bg-neutral-900">
-        <h2 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">
-          Cloud y seguridad
-        </h2>
-        <p class="mt-3 leading-7 text-neutral-700 dark:text-neutral-300">
-          Copias de seguridad, supervisión, actualizaciones y prevención frente
-          a malware o ransomware.
-        </p>
-      </article>
+    <div
+      class="overflow-hidden rounded-lg border border-neutral-300 bg-neutral-100 dark:border-neutral-700 dark:bg-neutral-900"
+    >
+      <Image
+        src={dashboardImage}
+        alt="Panel digital de seguimiento y mantenimiento"
+        class="h-full min-h-[320px] w-full object-cover p-6"
+        loading="eager"
+      />
     </div>
+  </section>
 
-    <div class="mt-10">
-      <PrimaryCTA title="Consultar tarifas" url="/docs/mantenimiento-bolsa-horas.pdf" />
+  <section class="py-10 lg:py-16">
+    <div class="grid gap-5 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+      <div>
+        <p class="text-sm font-bold tracking-wide text-orange-600 uppercase">
+          Modalidad bolsa de horas
+        </p>
+        <h2
+          class="mt-3 text-3xl font-bold text-neutral-900 dark:text-neutral-100"
+        >
+          Coste controlado y disponibilidad técnica cuando hace falta.
+        </h2>
+        <p class="mt-4 leading-8 text-neutral-700 dark:text-neutral-300">
+          La bolsa de horas mantiene un coste fijo para el soporte informático y
+          supone un ahorro frente a contratar horas sueltas. Puede utilizarse
+          para soporte técnico general o para cualquiera de nuestros servicios
+          IT.
+        </p>
+      </div>
+
+      <div class="grid gap-3 sm:grid-cols-2">
+        {
+          hourlyPacks.map(pack => (
+            <article class="rounded-lg border border-neutral-300 bg-neutral-100 p-5 dark:border-neutral-700 dark:bg-neutral-900">
+              <p class="text-sm font-semibold tracking-wide text-neutral-500 uppercase dark:text-neutral-400">
+                {pack.hours}
+              </p>
+              <p class="mt-2 text-3xl font-bold text-neutral-900 dark:text-neutral-100">
+                {pack.price}
+              </p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="py-10 lg:py-16">
+    <div
+      class="grid gap-8 rounded-lg border border-neutral-300 bg-neutral-100 p-6 lg:grid-cols-[0.8fr_1.2fr] lg:p-8 dark:border-neutral-700 dark:bg-neutral-900"
+    >
+      <div>
+        <p class="text-sm font-bold tracking-wide text-orange-600 uppercase">
+          Condiciones
+        </p>
+        <h2
+          class="mt-3 text-3xl font-bold text-neutral-900 dark:text-neutral-100"
+        >
+          Sin caducidad y con uso presencial o remoto.
+        </h2>
+      </div>
+      <ul
+        class="grid gap-3 text-neutral-700 sm:grid-cols-2 dark:text-neutral-300"
+      >
+        {
+          conditions.map(condition => (
+            <li class="rounded-lg bg-white p-4 leading-7 dark:bg-neutral-800">
+              {condition}
+            </li>
+          ))
+        }
+      </ul>
     </div>
   </section>
 </MainLayout>
